@@ -8,7 +8,12 @@
 <ul>
     <!--prints a list of the places in the visited list-->
     {% for place in visited %}
-        <li>{{place.name}}</li>
+    <!-- adding the links -->
+        <li>
+            <a href="{% url 'place_details' place_pk=place.pk %}">
+                {{place.name}}
+            </a>
+        </li>
     {% endfor %}
 </ul>
 <!--otherwise prints a statement saying that there are no places-->
